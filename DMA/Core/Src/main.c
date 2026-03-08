@@ -60,9 +60,12 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t aTxBuffer[] = "Hello, DMA! This is a test message for USART transmission using DMA.";
-#define BUFFER_SIZE sizeof(aTxBuffer)
+uint8_t aRxBuffer[64]; //接收缓冲区，大小根据需要调整
+#define TX_BUFFER_SIZE sizeof(aTxBuffer)
+#define RX_BUFFER_SIZE sizeof(aRxBuffer)
 
 extern DMA_HandleTypeDef hdma_usart1_tx;
+extern DMA_HandleTypeDef hdma_usart1_rx;
 /* USER CODE END 0 */
 
 /**
@@ -97,7 +100,7 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  
+  UART1_DMA_RX_RECEIVE(aRxBuffer, RX_BUFFER_SIZE); //启动接收
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,11 +110,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-     if(KEY_Scan(0) == 1)
-     {
-         UART1_DMA_TX_SEND(aTxBuffer, BUFFER_SIZE);
-     }
-    delay_ms(100);  
+
   }
   /* USER CODE END 3 */
 }
