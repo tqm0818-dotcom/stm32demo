@@ -24,12 +24,17 @@ dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 dma\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+dma\main.o: F:\keil\ARM\ARMCC\Bin\..\include\string.h
+dma\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
 dma\main.o: ../Core/Inc/dma.h
+dma\main.o: ../Core/Inc/i2c.h
 dma\main.o: ../Core/Inc/usart.h
 dma\main.o: ../Core/Inc/gpio.h
 dma\main.o: ../USER-DEMO/led.h
 dma\main.o: ../USER-DEMO/key.h
 dma\main.o: ../USER-DEMO/delay.h
 dma\main.o: ../USER-DEMO/userdma.h
+dma\main.o: ../USER-DEMO/oled.h

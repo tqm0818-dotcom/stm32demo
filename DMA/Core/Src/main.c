@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -28,6 +29,7 @@
 #include "key.h"
 #include "delay.h"
 #include "userdma.h"
+#include "oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,8 +101,13 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART1_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  UART1_DMA_RX_RECEIVE(aRxBuffer, RX_BUFFER_SIZE); //启动接收
+  // UART1_DMA_RX_RECEIVE(aRxBuffer, RX_BUFFER_SIZE); //启动接收
+  printf("Initializing OLED...\r\n");
+  OLED_Init(); //初始化OLED
+  printf("Filling OLED with white...\r\n");
+  OLED_FillWhite(); //填充全白
   /* USER CODE END 2 */
 
   /* Infinite loop */

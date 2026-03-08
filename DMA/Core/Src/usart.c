@@ -21,7 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-
+#include <stdio.h>
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -158,4 +158,15 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
 /* USER CODE BEGIN 1 */
 
+int fputc(int ch,FILE *f)
+ 
+{
+ 
+//采用轮询方式发送1字节数据，超时时间设置为无限等待
+ 
+HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,HAL_MAX_DELAY);
+ 
+return ch;
+ 
+}
 /* USER CODE END 1 */
