@@ -8,6 +8,9 @@
     （2）IIC通信
      硬件初始化哪些由cubemx配置  
      需要调用HAL_I2C_Master_Transmit(&hi2c1, (slave_addr << 1), &res, 0, IIC_TIMEOUT))    
-     来发送定义函数用于发送数据     
+     来发送定义函数用于发送数据  
+3.13 定时器编码器计数  
+     
+
 
      
